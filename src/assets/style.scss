@@ -23,7 +23,26 @@
     }
   }
 
+  main {
+    display:grid;
+    grid-template-columns: 400px auto 400px
+  }
+
 
   #left-parent {
+    grid-column:1/2;
     width:300px;
+  }
+
+  #right-parent {
+    grid-column:3/4;
+    width:300px;
+  }
+
+  .ua {
+    fill: blue;
+  }
+
+  .ru {
+    fill: red;
   }
