@@ -137,7 +137,7 @@
 
 <span style=background-color:lightgrey>“твит одобрен "днр"? #медиабляди #журнашлюхи”</span><br><br>
 
-<span style=background-color:lightgrey>Обнародованные документы - приговор для каждой #медиабляди ! Marina Daniluk-Ermolaeva точна и беспощадна на все 100: https://m.facebook.com/story.php?story_fbid=1069238743131681&id=100001366972097</span><br><br>
+<span style=background-color:lightgrey>Обнародованные документы - приговор для каждой #медиабляди ! Marina Daniluk-Ermolaeva точна и беспощадна на все 100</span><br><br>
 
 <span style=background-color:lightgrey>“Бочкала з Інтеру. Медіаблядей Інтера попалив Миротворець на співпраці з лугандонськими макаками.”</span><br><br>
 
@@ -322,17 +322,17 @@ export default {
   },
 
   mounted: function() { 
-    this.runMe();
+    /* this.runMe();
     this.porosenko_ua_path = this.d3LinePath(this.porosenko_data.dataUA) 
     this.porosenko_ru_path = this.d3LinePath(this.porosenko_data.dataRU) 
     this.porohoboty_ua_path = this.d3LinePath(this.porohoboty_data.dataUA)
-    this.porohoboty_ru_path = this.d3LinePath(this.porohoboty_data.dataRU)
+    this.porohoboty_ru_path = this.d3LinePath(this.porohoboty_data.dataRU) */
 
 
    },
 
   methods: {  
-    drawPoints: function() { 
+    /* drawPoints: function() { 
       var that = this;
       setTimeout(function(){          
           if(that.n < that.dates.length-1 & that.stop === false){
@@ -348,7 +348,7 @@ export default {
         setInterval(function(){
           that.drawPoints()
         }, 500)      
-     },
+     }, */
      
 
      
@@ -362,7 +362,7 @@ export default {
     },      */ 
   },
   computed: {    
-    porosenko_data: function(){
+ /*    porosenko_data: function(){
      var that = this; 
      var maxCount = d3.max(porosenko, function(d) { return +d.count } ); 
      var dates = porosenko.map(function(x) { return new Date(x.week) })
@@ -378,8 +378,8 @@ export default {
      var minDate = new Date(Math.min.apply(null, unique_dates));   
      var maxDate = new Date(Math.max.apply(null, unique_dates));   
      return  { dataUA, dataRU, maxCount, minDate, maxDate }
-    }, 
-    porohoboty_data: function() {
+    },  */
+  /*   porohoboty_data: function() {
      var that = this; 
      porohoboty.forEach(function(row){ row.week = that.parseDate(row.week)  })      
      var maxCount = d3.max(porohoboty, function(d) { return +d.count } );      
@@ -405,13 +405,13 @@ export default {
      var minDate = new Date(Math.min.apply(null, unique_dates));   
      var maxDate = new Date(Math.max.apply(null, unique_dates));   
      return  { dataUA, dataRU, maxCount, minDate, maxDate }
-    },
+    }, */
 
-    scale() {
+   /*  scale() {
       var that = this; 
       var y = d3.scaleLinear()
         .range([that.height, 0])
-       /*  .domain([0, 240]) */
+       
           
       var x = d3.scaleTime()
         .range([0, that.width])
@@ -428,14 +428,14 @@ export default {
         return (path) 
     },
 
-    
+     */
 
 
 
 
 
     //срач-чарт
-     leftData: function() {
+     /* leftData: function() {
      data1.map(function(val) {
         val.x = 100+Math.floor(Math.random() * 200);
         val.y = 100+Math.floor(Math.random() * window.innerHeight);
@@ -443,8 +443,8 @@ export default {
         val.check = theDate.getTime(); 
       })
     return(data1);
-    },
-    rightData: function() {
+    }, */
+    /* rightData: function() {
       data2.map(function(val) {
         val.x = 100+Math.floor(Math.random() * 200);
         val.y = 100+Math.floor(Math.random() * window.innerHeight);        
@@ -452,9 +452,9 @@ export default {
         val.check = theDate.getTime(); 
       })
     return(data2);
-    },
+    }, */
 
-    dates: function(){
+    /* dates: function(){
       var that = this;  
       var leftDates = that.leftData.map(function(x) {
             return new Date(x["date"]);
@@ -476,8 +476,8 @@ export default {
       uniquedates.sort(function(a,b){ return new Date(a) - new Date(b); });
       return(uniquedates)    
     },
-
-    latest: function() {
+ */
+    /* latest: function() {
       var that = this;  
       var latest = new Date(Math.max.apply(null, that.dates));     
       return(latest)
@@ -492,7 +492,7 @@ export default {
       var that = this;  
       var dateTo = that.formatDate(that.currentDate)      
       return(dateTo)
-    },
+    }, */
     
     
     /* porosenko_ru_path: function () {   
@@ -502,17 +502,16 @@ export default {
     },   */
   },
     directives: {    
-    axisY(el, binding, vnode) {            
+ /*    axisY(el, binding, vnode) {            
 
      vnode.context.scale.y.domain(binding.value)      
       d3.select(el).call(d3.axisLeft(vnode.context.scale.y)       
       );
     },
     axisX(el, binding, vnode) {        
-       /* vnode.context.scale.x.domain(binding.value) */ 
       d3.select(el).call(d3.axisBottom(vnode.context.scale.x)
       );
-    }
+    } */
   }
   }
 
